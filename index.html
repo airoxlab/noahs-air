@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Noah's Air Conditioning and Heating — HVAC contractor serving Lancaster, Palmdale, Quartz Hill, Rosamond and the Antelope Valley. AC repair, heating, heat pumps, mini-splits and installation. Call (661) 436-8945.">
+<title>Noah's Air Conditioning and Heating</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --sand: #FAF6EF;
+    --sand-deep: #F0E8DA;
+    --dusk: #1F3A4D;
+    --dusk-deep: #142736;
+    --sun: #D9742B;
+    --sun-soft: #E8903F;
+    --sky: #2E7FA8;
+    --ink: #22282E;
+    --ink-soft: #5F6B76;
+    --line: #E2D9C9;
+    --card: #FFFFFF;
+    --img-bg: #EDE4D6;
+    --on-dark: #F6F1E8;
+    --on-accent: #FFFFFF;
+    --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+    --body: "Barlow", "Segoe UI", Arial, sans-serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sand: #15181C;
+      --sand-deep: #0F1216;
+      --dusk: #8FBAD4;
+      --dusk-deep: #B2D3E6;
+      --sun: #E8903F;
+      --sun-soft: #D9742B;
+      --sky: #65A8C9;
+      --ink: #E8EBEF;
+      --ink-soft: #9AA5B0;
+      --line: #2A3038;
+      --card: #1B1F25;
+      --img-bg: #242A31;
+      --on-dark: #0F1216;
+      --on-accent: #15181C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --sand: #15181C;
+    --sand-deep: #0F1216;
+    --dusk: #8FBAD4;
+    --dusk-deep: #B2D3E6;
+    --sun: #E8903F;
+    --sun-soft: #D9742B;
+    --sky: #65A8C9;
+    --ink: #E8EBEF;
+    --ink-soft: #9AA5B0;
+    --line: #2A3038;
+    --card: #1B1F25;
+    --img-bg: #242A31;
+    --on-dark: #0F1216;
+    --on-accent: #15181C;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0; background: var(--sand); color: var(--ink);
+    font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+  }
+  a { color: var(--sky); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 2px; }
+  img, svg { max-width: 100%; display: block; }
+
+  .wrap { max-width: 70rem; margin: 0 auto; padding: 0 1.25rem; }
+  .eyebrow {
+    font-family: var(--display); font-weight: 700; font-size: 0.95rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--sun); margin: 0 0 0.6rem;
+  }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; color: var(--dusk-deep); text-wrap: balance; margin: 0; line-height: 1.05; }
+  h2 { font-size: clamp(2.1rem, 5vw, 2.9rem); text-transform: uppercase; letter-spacing: -0.01em; }
+  h3 { font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.01em; }
+  p { margin: 0; }
+  section { padding: 4.25rem 0; scroll-margin-top: 4.5rem; }
+  .section-intro { max-width: 44em; margin-top: 0.9rem; color: var(--ink-soft); }
+
+  /* Header */
+  .site-head {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--sand) 93%, transparent);
+    backdrop-filter: blur(9px); border-bottom: 1px solid var(--line);
+  }
+  header.site { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; }
+  .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+  .brand .mark { flex: none; }
+  .brand .txt { font-family: var(--display); font-weight: 700; font-size: 1.22rem; line-height: 1; color: var(--dusk-deep); text-transform: uppercase; letter-spacing: 0.01em; }
+  .brand .txt small { display: block; font-size: 0.66rem; letter-spacing: 0.22em; color: var(--sun); font-weight: 600; margin-top: 2px; }
+  nav.top { display: none; gap: 1.2rem; }
+  nav.top a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.93rem; }
+  nav.top a:hover { color: var(--sun); }
+  .call-btn {
+    display: inline-block; background: var(--sun); color: var(--on-accent);
+    text-decoration: none; font-family: var(--display); font-weight: 700;
+    font-size: 1.02rem; letter-spacing: 0.02em; padding: 0.5rem 1.15rem;
+    border-radius: 0.3rem; white-space: nowrap;
+  }
+  .call-btn:hover { background: var(--dusk); }
+  @media (min-width: 1000px) { nav.top { display: flex; } }
+  @media (max-width: 420px) { .brand .txt { font-size: 1.02rem; } }
+
+  /* Hero */
+  .hero { padding: 3.4rem 0 3.8rem; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -30% -15% auto 45%; height: 95%;
+    background: radial-gradient(ellipse at center, color-mix(in srgb, var(--sun) 16%, transparent), transparent 68%);
+    pointer-events: none;
+  }
+  .hero-grid { display: grid; gap: 2.4rem; align-items: center; position: relative; }
+  @media (min-width: 880px) { .hero-grid { grid-template-columns: 1.08fr 1fr; gap: 3rem; } }
+  .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.1rem; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+    padding: 0.3rem 0.9rem; font-weight: 600; font-size: 0.82rem; color: var(--dusk);
+  }
+  .pill.star { color: var(--sun); }
+  .hero h1 { font-size: clamp(2.5rem, 6.5vw, 3.9rem); text-transform: uppercase; }
+  .hero h1 .sun { color: var(--sun); }
+  .hero .lede { margin-top: 1.1rem; font-size: 1.13rem; max-width: 33em; color: var(--ink-soft); }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.7rem; }
+  .btn {
+    display: inline-block; text-decoration: none; font-family: var(--display);
+    font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em;
+    padding: 0.75rem 1.6rem; border-radius: 0.3rem; text-transform: uppercase;
+  }
+  .btn-solid { background: var(--sun); color: var(--on-accent); }
+  .btn-solid:hover { background: var(--sun-soft); }
+  .btn-ghost { border: 2px solid var(--dusk); color: var(--dusk); }
+  .btn-ghost:hover { border-color: var(--sun); color: var(--sun); }
+  .hero-note { margin-top: 1.2rem; font-size: 0.92rem; color: var(--ink-soft); }
+  .hero-photo { margin: 0; border-radius: 0.6rem; overflow: hidden; border: 1px solid var(--line); background: var(--img-bg); }
+  .hero-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+  /* Strip */
+  .strip { background: var(--dusk-deep); padding: 1.9rem 0; }
+  .strip-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(2, 1fr); text-align: center; }
+  @media (min-width: 780px) { .strip-grid { grid-template-columns: repeat(4, 1fr); } }
+  .strip-grid .n { font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.8rem); color: #F0A862; line-height: 1.1; text-transform: uppercase; }
+  .strip-grid .l { margin-top: 0.25rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-dark); opacity: 0.85; }
+  :root[data-theme="dark"] .strip { background: var(--card); }
+  :root[data-theme="dark"] .strip-grid .l { color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .strip { background: var(--card); }
+    :root:not([data-theme="light"]) .strip-grid .l { color: var(--ink); }
+  }
+
+  /* Services */
+  .svc-grid { display: grid; gap: 1.1rem; margin-top: 2.3rem; }
+  @media (min-width: 640px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+  .svc { background: var(--card); border: 1px solid var(--line); border-radius: 0.5rem; padding: 1.5rem 1.4rem; }
+  .svc .ico { color: var(--sun); margin-bottom: 0.7rem; }
+  .svc p { margin-top: 0.45rem; font-size: 0.94rem; color: var(--ink-soft); }
+
+  /* Review */
+  .review { background: var(--sand-deep); }
+  .review-card {
+    max-width: 46rem; margin: 2rem auto 0; background: var(--card);
+    border: 1px solid var(--line); border-left: 5px solid var(--sun);
+    border-radius: 0.5rem; padding: 2rem 1.9rem;
+  }
+  .stars { color: var(--sun); letter-spacing: 0.18em; font-size: 1.1rem; }
+  .review-card blockquote {
+    margin: 0.8rem 0 0; font-family: var(--display); font-weight: 600;
+    font-size: clamp(1.3rem, 3vw, 1.65rem); line-height: 1.3; color: var(--dusk-deep);
+  }
+  .review-card .who { margin-top: 1rem; font-size: 0.9rem; color: var(--ink-soft); }
+  .review-card .who strong { color: var(--ink); }
+  .review-note { text-align: center; margin-top: 1.2rem; font-size: 0.88rem; color: var(--ink-soft); }
+
+  /* Areas */
+  .area-grid { display: grid; gap: 0.7rem; margin-top: 2.2rem; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 700px) { .area-grid { grid-template-columns: repeat(4, 1fr); } }
+  .area {
+    background: var(--card); border: 1px solid var(--line); border-radius: 0.4rem;
+    padding: 0.85rem 0.7rem; text-align: center; font-family: var(--display);
+    font-weight: 700; font-size: 1.08rem; text-transform: uppercase;
+    letter-spacing: 0.02em; color: var(--dusk-deep);
+  }
+
+  /* Why */
+  .why { background: var(--sand-deep); }
+  .why-grid { display: grid; gap: 1.1rem; margin-top: 2.2rem; }
+  @media (min-width: 760px) { .why-grid { grid-template-columns: repeat(3, 1fr); } }
+  .why-card { background: var(--card); border: 1px solid var(--line); border-radius: 0.5rem; padding: 1.5rem 1.4rem; }
+  .why-card .n { font-family: var(--display); font-weight: 700; font-size: 1.6rem; color: var(--sun); line-height: 1; }
+  .why-card h3 { margin-top: 0.45rem; font-size: 1.15rem; }
+  .why-card p { margin-top: 0.4rem; font-size: 0.93rem; color: var(--ink-soft); }
+
+  /* Work */
+  .work-grid { display: grid; gap: 1rem; margin-top: 2.3rem; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 820px) { .work-grid { grid-template-columns: repeat(4, 1fr); } }
+  .shot { margin: 0; border: 1px solid var(--line); border-radius: 0.5rem; overflow: hidden; background: var(--card); }
+  .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--img-bg); }
+  .shot figcaption { padding: 0.7rem 0.9rem; font-size: 0.85rem; color: var(--ink-soft); font-weight: 500; }
+  .fine { margin-top: 1.25rem; font-size: 0.85rem; color: var(--ink-soft); }
+
+  /* Contact */
+  .contact-band { background: var(--dusk-deep); text-align: center; }
+  .contact-band .eyebrow { color: #F0A862; }
+  .contact-band h2 { color: var(--on-dark); }
+  .contact-band .section-intro { color: var(--on-dark); opacity: 0.88; margin-inline: auto; }
+  .contact-band .hero-ctas { justify-content: center; }
+  .contact-band .btn-solid { background: var(--sun); color: #FFFFFF; }
+  .contact-band .btn-solid:hover { background: var(--on-dark); color: var(--dusk-deep); }
+  .contact-band .btn-ghost { border-color: var(--on-dark); color: var(--on-dark); }
+  .contact-band .btn-ghost:hover { border-color: #F0A862; color: #F0A862; }
+  .contact-band .fine { margin-top: 1.4rem; color: var(--on-dark); opacity: 0.85; font-size: 0.92rem; }
+  :root[data-theme="dark"] .contact-band { background: var(--sand-deep); }
+  :root[data-theme="dark"] .contact-band h2,
+  :root[data-theme="dark"] .contact-band .section-intro,
+  :root[data-theme="dark"] .contact-band .fine { color: var(--ink); }
+  :root[data-theme="dark"] .contact-band .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .contact-band { background: var(--sand-deep); }
+    :root:not([data-theme="light"]) .contact-band h2,
+    :root:not([data-theme="light"]) .contact-band .section-intro,
+    :root:not([data-theme="light"]) .contact-band .fine { color: var(--ink); }
+    :root:not([data-theme="light"]) .contact-band .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  }
+
+  /* Footer */
+  footer.site {
+    background: var(--sand-deep); border-top: 1px solid var(--line);
+    color: var(--ink-soft); padding: 2.4rem 0; text-align: center; font-size: 0.9rem;
+  }
+  footer.site .fname { font-family: var(--display); font-weight: 700; font-size: 1.3rem; color: var(--dusk-deep); text-transform: uppercase; }
+  footer.site p { margin-top: 0.3rem; }
+  footer.site a { color: inherit; }
+  footer.site .fineprint { font-size: 0.78rem; max-width: 50em; margin: 0.9rem auto 0; }
+</style>
+</head>
+<body>
+
+<div class="site-head">
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="#top" aria-label="Noah's Air Conditioning and Heating home">
+        <svg class="mark" width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="#1F3A4D"/>
+          <circle cx="20" cy="20" r="7.5" fill="#D9742B"/>
+          <g stroke="#D9742B" stroke-width="2.4" stroke-linecap="round">
+            <path d="M20 4.5v5M20 30.5v5M4.5 20h5M30.5 20h5M9.2 9.2l3.5 3.5M27.3 27.3l3.5 3.5M30.8 9.2l-3.5 3.5M12.7 27.3l-3.5 3.5"/>
+          </g>
+        </svg>
+        <span class="txt">Noah's<small>Air &amp; Heating</small></span>
+      </a>
+      <nav class="top" aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#review">Reviews</a>
+        <a href="#areas">Areas</a>
+        <a href="#why">Why us</a>
+        <a href="#work">Our work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="call-btn" href="tel:+16614368945">Call (661) 436-8945</a>
+    </header>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="pills">
+          <span class="pill star">&#9733; 5.0 on Google</span>
+          <span class="pill">Antelope Valley</span>
+        </div>
+        <h1>Cool in July. <span class="sun">Warm in January.</span></h1>
+        <p class="lede">Noah's Air Conditioning and Heating keeps Antelope Valley homes comfortable through desert summers and cold high-desert nights — AC, heating, heat pumps and mini-splits, repaired and installed.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="tel:+16614368945">Call (661) 436-8945</a>
+          <a class="btn btn-ghost" href="#services">What we do</a>
+        </div>
+        <p class="hero-note">Lancaster, CA &middot; serving the Antelope Valley &middot; open until 5pm</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/tech2.jpg" alt="HVAC technician working on a unit">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 2. STRIP ============ -->
+  <div class="strip">
+    <div class="wrap strip-grid">
+      <div><div class="n">&#9733; 5.0</div><div class="l">Google rating</div></div>
+      <div><div class="n">Lancaster</div><div class="l">Local &amp; independent</div></div>
+      <div><div class="n">AC &amp; Heat</div><div class="l">Both, year round</div></div>
+      <div><div class="n">Straight answers</div><div class="l">On price and repairs</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 3. SERVICES ============ -->
+  <section id="services">
+    <div class="wrap">
+      <p class="eyebrow">What we do</p>
+      <h2>Heating and cooling, start to finish.</h2>
+      <p class="section-intro">Repairs when something quits, installs when it is past saving, and the service in between that stops it quitting in the first place.</p>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div>
+          <h3>A/C repair</h3>
+          <p>When it is 105&deg; outside, a dead air conditioner is not an inconvenience. Diagnosed properly and fixed.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7S6.5 9.4 6.5 14a5.5 5.5 0 0 0 11 0c0-4.6-5.5-11.3-5.5-11.3z"/></svg></div>
+          <h3>Heating &amp; furnaces</h3>
+          <p>High-desert nights get cold. Furnaces that will not light, short-cycle or blow cool air, put right.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4M17 12h4M12 3v4M12 17v4"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <h3>Heat pumps</h3>
+          <p>One system for both seasons — efficient in a climate that swings hard in both directions.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="8" rx="2"/><path d="M7 17c0 1.5 1 2 2 2M12 17c0 1.5 1 2 2 2M17 17c0 1.5 1 2 2 2"/></svg></div>
+          <h3>Mini-splits</h3>
+          <p>Ductless units for garages, additions, converted rooms and anywhere the ducting never reached.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg></div>
+          <h3>New system installation</h3>
+          <p>Sized for your home, not guessed at. Old unit pulled out and taken away.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>Maintenance</h3>
+          <p>A service before summer is cheaper than an emergency call in the middle of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. REVIEW ============ -->
+  <section id="review" class="review">
+    <div class="wrap">
+      <p class="eyebrow" style="text-align:center">From our Google listing</p>
+      <h2 style="text-align:center">What a customer said.</h2>
+      <div class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Totally professional, fast, reliable, friendly, honest, and a man of his word. He do his utmost to save you money.&rdquo;</blockquote>
+        <p class="who"><strong>Todd Rodger</strong> &middot; Google review</p>
+      </div>
+      <p class="review-note">That is our only review so far &mdash; and we would like more. If we have worked for you, a few words on Google means a great deal to a small local business.</p>
+    </div>
+  </section>
+
+  <!-- ============ 5. AREAS ============ -->
+  <section id="areas">
+    <div class="wrap">
+      <p class="eyebrow">Where we work</p>
+      <h2>Across the Antelope Valley.</h2>
+      <p class="section-intro">Based in Lancaster, working the valley around it.</p>
+      <div class="area-grid">
+        <div class="area">Lancaster</div>
+        <div class="area">Palmdale</div>
+        <div class="area">Quartz Hill</div>
+        <div class="area">Rosamond</div>
+        <div class="area">Littlerock</div>
+        <div class="area">Acton</div>
+        <div class="area">Lake&nbsp;Hughes</div>
+        <div class="area">Mojave</div>
+      </div>
+      <p class="fine">Somewhere else in the valley? Call and ask &mdash; if we can get there, we will.</p>
+    </div>
+  </section>
+
+  <!-- ============ 6. WHY ============ -->
+  <section id="why" class="why">
+    <div class="wrap">
+      <p class="eyebrow">Why us</p>
+      <h2>A small outfit that answers the phone.</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="n">01</div>
+          <h3>You get the owner</h3>
+          <p>Not a call centre and not a rotating crew. You deal with the person doing the work, and he is accountable for it.</p>
+        </div>
+        <div class="why-card">
+          <div class="n">02</div>
+          <h3>Honest about cost</h3>
+          <p>If a repair will hold, we repair it. We will tell you when a system is genuinely past saving &mdash; and when it is not.</p>
+        </div>
+        <div class="why-card">
+          <div class="n">03</div>
+          <h3>We know this climate</h3>
+          <p>Antelope Valley heat is hard on equipment. Systems here need sizing and servicing for the desert, not for the coast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. WORK ============ -->
+  <section id="work">
+    <div class="wrap">
+      <p class="eyebrow">The work</p>
+      <h2>Comfortable rooms, quietly running systems.</h2>
+      <div class="work-grid">
+        <figure class="shot">
+          <img src="img/tech2.jpg" alt="Technician working on a unit" loading="lazy">
+          <figcaption>Diagnosis &amp; repair</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/furnace.jpg" alt="HVAC technician on site" loading="lazy">
+          <figcaption>Service calls</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/thermo.jpg" alt="Thermostat on a wall" loading="lazy">
+          <figcaption>Controls &amp; thermostats</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/interior.jpg" alt="Living room at an even temperature" loading="lazy">
+          <figcaption>Whole-home comfort</figcaption>
+        </figure>
+      </div>
+      <p class="fine">These photographs illustrate the type of work offered. Photos of our own jobs are coming soon.</p>
+    </div>
+  </section>
+
+  <!-- ============ 8. CONTACT ============ -->
+  <section id="contact" class="contact-band">
+    <div class="wrap">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Too hot, too cold, or making a noise?</h2>
+      <p class="section-intro">Call and tell us what it is doing. We will tell you what it takes to put right.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="tel:+16614368945">Call (661) 436-8945</a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?cid=4733530750011959100" rel="noopener">Find us on Google</a>
+      </div>
+      <p class="fine">Lancaster, CA &middot; serving the Antelope Valley</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p class="fname">Noah's Air Conditioning and Heating</p>
+    <p>HVAC contractor &middot; Lancaster, California</p>
+    <p><a href="tel:+16614368945">(661) 436-8945</a></p>
+    <p class="fineprint">Photographs on this page illustrate the type of work offered rather than specific completed jobs.</p>
+  </div>
+</footer>
+
+</body>
+</html>
